@@ -65,6 +65,7 @@ func delete_control_button(idx: int):
 func on_control_button_pressed(idx: int):
 	for child in control_button_cont.get_children():
 		child.disabled = false
+	selected_point = idx
 	control_button_cont.get_children()[idx+1].disabled = true
 
 func on_place_point_button_pressed():

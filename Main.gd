@@ -36,10 +36,10 @@ func on_left_click(pos: Vector2):
 	$BezierProcessor.update(points)
 
 func add_control_button():
-	var control_button: Button = Button.new()
+	var control_button: ControlButton = ControlButton.new()
 	control_button_cont.add_child(control_button)
 	control_button.text = "P" + str(control_points.size()-1)
-	control_button.button_down.connect(on_control_button_pressed.bind(control_points.size()-1))
+	control_button.button_down_w_index.connect(on_control_button_pressed)
 
 func on_right_click():
 	if control_points.size() == 0: return
@@ -63,10 +63,9 @@ func delete_control_button(idx: int):
 	
 
 func on_control_button_pressed(idx: int):
-	print("button for point " + str(idx) + " pressed")
-	selected_point = idx
+	for child in control_button_cont.get_children():
+		child.disabled = false
 	control_button_cont.get_children()[idx+1].disabled = true
-	place_point_button.disabled = false
 
 func on_place_point_button_pressed():
 	control_button_cont.get_children()[selected_point+1].disabled = false

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://n7cahyeli0p1"]
+
+[ext_resource type="Texture2D" uid="uid://b0c5s3yvrkd68" path="res://circle_100x100.png" id="1_grsto"]
+
+[node name="Point" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_grsto")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 19.0
+offset_bottom = 26.0
+text = "P0"

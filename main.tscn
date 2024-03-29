@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu47eda2tieq0"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_eni7y"]
+[ext_resource type="Script" path="res://InputController.gd" id="2_jegq2"]
+[ext_resource type="Script" path="res://BezierProcessor.gd" id="3_3gv3p"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_eni7y")
+
+[node name="SidePanel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.112
+anchor_bottom = 1.0
+offset_right = -0.0240021
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SidePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SidePanel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SidePanel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="PlacePoint" type="Button" parent="SidePanel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Place Point"
+
+[node name="InputController" type="Node2D" parent="."]
+script = ExtResource("2_jegq2")
+
+[node name="BezierProcessor" type="Node" parent="."]
+script = ExtResource("3_3gv3p")
+
+[node name="Line2D" type="Line2D" parent="BezierProcessor"]
+width = 1.0
+default_color = Color(0.862745, 0, 0, 1)

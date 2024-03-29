@@ -17,9 +17,8 @@ script = ExtResource("1_eni7y")
 [node name="SidePanel" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.112
 anchor_bottom = 1.0
-offset_right = -0.0240021
+offset_right = 110.0
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="SidePanel"]
@@ -53,9 +52,13 @@ width = 1.0
 default_color = Color(0.862745, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 416.0
-offset_right = 822.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.539
+anchor_right = 0.539
+offset_left = -178.928
+offset_right = 190.072
 offset_bottom = 66.0
+grow_horizontal = 2
 text = "Left click - Place point or move point
 Right click - Delete latest point or selected point"
